@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andy SE - Portfolio</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- Scrollspy highlights the current section -->
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="-56px 0px -70%">
+
+  <!-- Page loader -->
+  <div id="page-loader" class="page-loader d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand header-font" href="#top">Andy SE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <!-- Step 2: menu items added by app.js -->
+        <ul id="nav-list" class="navbar-nav ms-auto mb-2 mb-lg-0"></ul>
+        <button id="theme-toggle" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mb-2 mb-lg-0">Dark Mode</button>
+        <a href="resume.pdf" class="btn btn-resume btn-sm ms-lg-2 mb-2 mb-lg-0 resume-download" download>Download Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header id="top" class="site-header bg-gradient text-white">
+    <div class="container">
+      <div class="row align-items-center py-5">
+        <div class="col-lg-8">
+          <h1 class="display-2 header-font mb-3">Andy SE</h1>
+          <p class="lead mb-2">Aspiring Lawyer &amp; Software Engineer</p>
+          <p id="greeting" class="lead mb-4"></p>
+          <a href="resume.pdf" class="btn btn-resume btn-lg resume-download" download>Download Resume</a>
+          <p id="download-count" class="download-count small mt-2 mb-0"></p>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <p class="header-note mb-0">Political Science and Software Engineering at Northern Arizona University, Flagstaff, AZ.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="about" class="page-section">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <h2 class="h2 section-title">Summary</h2>
+          <p class="lead">
+            I'm a student at NAU studying Political Science and Software Engineering,
+            with interest in <strong>secure systems design</strong> and
+            <em>independent filmmaking</em>. I'm passionate about crafting things
+            that are both creative and methodic.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="card facts-card h-100">
+            <div class="card-body">
+              <h3 class="h6 fw-semibold mb-3">At a glance</h3>
+              <p class="mb-2">Flagstaff, AZ</p>
+              <p class="mb-2">Bilingual English and Spanish</p>
+              <p class="mb-0">Open to remote, hybrid, or relocation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tables built by app.js -->
+    <section id="education" class="page-section">
+      <h2 class="h2 section-title">Education &amp; Experience</h2>
+      <div class="row g-4">
+        <div class="col-12">
+          <h3 class="h5 fw-semibold">Education</h3>
+          <div id="education-table"></div>
+        </div>
+        <div class="col-12">
+          <h3 class="h5 fw-semibold">Experience</h3>
+          <div id="experience-table"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="page-section">
+      <h2 class="h2 section-title">Skills</h2>
+
+      <!-- Bonus: live skill search -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <label for="skillSearch" class="form-label fw-semibold">Search skills</label>
+          <input type="search" id="skillSearch" class="form-control" placeholder="Type to filter, example: jav">
+        </div>
+      </div>
+
+      <!-- Step 1: lists rendered from the skills array -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card skill-card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Web Development</h3>
+              <p class="card-text text-body-secondary">Building and deploying responsive pages.</p>
+              <ul id="skills-web" class="skill-list list-unstyled mb-0"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card skill-card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Programming &amp; IT</h3>
+              <p class="card-text text-body-secondary">Writing code and supporting systems.</p>
+              <ul id="skills-it" class="skill-list list-unstyled mb-0"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card skill-card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Professional</h3>
+              <p class="card-text text-body-secondary">Working with teams and people.</p>
+              <ul id="skills-pro" class="skill-list list-unstyled mb-0"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="search-empty" class="small text-body-secondary mt-3 mb-0" style="display: none;">No skills match your search.</p>
+
+      <!-- Step 1 + Step 4: add skill form -->
+      <form id="skill-form" class="row g-2 align-items-end mt-3">
+        <div class="col-md-5">
+          <label for="skill-input" class="form-label fw-semibold">New skill</label>
+          <input type="text" id="skill-input" class="form-control" placeholder="Example: JavaScript" autocomplete="off">
+        </div>
+        <div class="col-md-4">
+          <label for="skill-category" class="form-label fw-semibold">Category</label>
+          <select id="skill-category" class="form-select">
+            <option value="web">Web Development</option>
+            <option value="it">Programming &amp; IT</option>
+            <option value="pro">Professional</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-outline-ocean w-100">Add Skill</button>
+        </div>
+        <p class="small text-body-secondary mb-0">Press Enter to add, Escape to clear. Click a skill to edit it.</p>
+        <p id="skill-message" class="small mb-0" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Step 3: project cards built by app.js -->
+    <section id="projects" class="page-section">
+      <h2 class="h2 section-title">Projects</h2>
+      <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+        <span class="fw-semibold me-1">Sort by deadline:</span>
+        <div class="btn-group" role="group" aria-label="Sort projects by deadline">
+          <button type="button" id="sort-earliest" class="btn btn-outline-ocean btn-sm" aria-pressed="false">Earliest first</button>
+          <button type="button" id="sort-latest" class="btn btn-outline-ocean btn-sm" aria-pressed="false">Latest first</button>
+        </div>
+      </div>
+      <div id="project-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </section>
+
+    <section id="contact" class="page-section">
+      <h2 class="h2 section-title">Contact Information</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <p class="mb-1 fw-semibold">Email</p>
+          <a class="link-ocean link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="mailto:trabajoandreasalcido@gmail.com">trabajoandreasalcido@gmail.com</a>
+        </div>
+        <div class="col-md-4">
+          <p class="mb-1 fw-semibold">Phone</p>
+          <a class="link-ocean link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="tel:+19285106461">928-510-6461</a>
+        </div>
+        <div class="col-md-4">
+          <p class="mb-1 fw-semibold">GitHub</p>
+          <a class="link-ocean link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://github.com/as6644-beep" target="_blank" rel="noopener">github.com/as6644-beep</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Display settings -->
+    <section id="settings" class="page-section">
+      <h2 class="h2 section-title">Display Settings</h2>
+      <div class="card facts-card">
+        <div class="card-body row g-4 align-items-end">
+          <div class="col-md-5">
+            <label for="font-size-input" class="form-label fw-semibold">Font size: <span id="font-size-value">16px</span></label>
+            <input type="range" id="font-size-input" class="form-range" min="12" max="20" value="16">
+          </div>
+          <div class="col-md-4">
+            <label for="bg-color-input" class="form-label fw-semibold">Background color</label>
+            <input type="color" id="bg-color-input" class="form-control form-control-color" value="#f7fbfc">
+          </div>
+          <div class="col-md-3">
+            <button type="button" id="reset-display" class="btn btn-outline-ocean w-100">Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer bg-gradient text-white">
+    <div class="container">
+      <div class="row align-items-center py-4">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-2 mb-md-0 small">&copy; 2026 Andy SE</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#top" class="back-to-top link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover small">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project modals (opened by buttons app.js creates) -->
+  <div class="modal fade" id="designModal" tabindex="-1" aria-labelledby="designModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="designModalLabel">Design Project</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/project1_ss.png" class="img-fluid rounded mb-3" alt="Canva folder with seven Instagram designs for Coconino County">
+          <p class="mb-2">A set of seven Instagram designs for Coconino County: reels, stories, and 4:5 posts built from Flagstaff forest photography.</p>
+          <p class="mb-0"><span class="fw-semibold">Tools:</span> Canva, photography</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="portfolioModalLabel">Portfolio Website</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio_ss.png" class="img-fluid rounded mb-3" alt="Screenshot of this portfolio's header and navigation bar">
+          <p class="mb-2">Started in plain HTML and CSS, moved to Flexbox and Grid in HW5, rebuilt with Bootstrap 5 in HW6, and made interactive with JavaScript in HW7, HW8, and HW9.</p>
+          <p class="mb-0"><span class="fw-semibold">Tools:</span> HTML, CSS, Bootstrap 5, JavaScript, jQuery, GitHub Pages</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- jQuery, then my script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

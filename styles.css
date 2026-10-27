@@ -1,0 +1,301 @@
+/* Theme colors */
+:root {
+  --ocean-dark: #05445E;
+  --ocean-mid: #0F7A93;
+  --ocean-light: #D4F1F4;
+  --coral: #C2365E;
+  --coral-dark: #A42B4E;
+  --coral-light: #FF6F91;
+  --page-bg: #F7FBFC;
+  --nav-h: 56px;
+}
+
+html {
+  scroll-padding-top: calc(var(--nav-h) + 1rem);
+}
+
+/* jQuery animate() does the smooth scrolling */
+:root {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--page-bg);
+  padding-top: var(--nav-h);
+}
+
+/* Step 1: Bootstrap Layout */
+.site-nav {
+  background-color: var(--ocean-dark);
+}
+
+.site-nav .nav-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid var(--coral-light);
+}
+
+.page-section {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.page-section:last-of-type {
+  min-height: 80vh;
+  padding-bottom: 4rem;
+}
+
+/* Step 2: Bootstrap Components */
+.btn-resume {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--coral);
+  --bs-btn-border-color: var(--coral);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--coral-dark);
+  --bs-btn-hover-border-color: var(--coral-dark);
+  --bs-btn-active-bg: var(--coral-dark);
+  --bs-btn-active-border-color: var(--coral-dark);
+  font-weight: 600;
+}
+
+.btn-outline-ocean {
+  --bs-btn-color: var(--ocean-dark);
+  --bs-btn-border-color: var(--ocean-dark);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--ocean-dark);
+  --bs-btn-hover-border-color: var(--ocean-dark);
+  --bs-btn-active-bg: var(--ocean-dark);
+  --bs-btn-active-color: #ffffff;
+}
+
+.table-ocean {
+  --bs-table-bg: var(--ocean-light);
+  --bs-table-color: var(--ocean-dark);
+}
+
+.facts-card {
+  border: 0;
+  border-left: 4px solid var(--coral-light);
+  background-color: #ffffff;
+}
+
+.skill-card {
+  border: 0;
+  border-top: 4px solid var(--ocean-mid);
+}
+
+/* HW9 Step 1: skill items with edit and delete */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--ocean-light);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-name,
+.skill-delete {
+  border: 0;
+  background: transparent;
+  color: var(--ocean-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.skill-name {
+  padding: 0.3rem 0.4rem 0.3rem 0.75rem;
+  cursor: text;
+}
+
+.skill-name:hover {
+  text-decoration: underline;
+}
+
+.skill-delete {
+  padding: 0.3rem 0.65rem 0.3rem 0.35rem;
+  font-size: 1rem;
+}
+
+.skill-delete:hover {
+  color: var(--coral);
+}
+
+.skill-edit {
+  width: 11rem;
+  border-radius: 999px;
+}
+
+.project-card {
+  border: 0;
+  overflow: hidden;
+}
+
+.project-card .card-img-top {
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Step 3: Gradient Color and Color Theory */
+.site-header {
+  --bs-gradient: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-mid) 100%);
+  background-color: var(--ocean-dark);
+}
+
+.site-footer {
+  --bs-gradient: linear-gradient(90deg, var(--ocean-mid) 0%, var(--ocean-dark) 100%);
+  background-color: var(--ocean-dark);
+}
+
+.section-title {
+  color: var(--ocean-dark);
+  border-bottom: 2px solid var(--coral-light);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Step 4: Typography and Font Selection */
+body {
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  color: #1f2d33;
+}
+
+.header-font,
+.section-title {
+  font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.site-header .display-2 {
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.header-note {
+  border-left: 2px solid var(--coral-light);
+  padding-left: 1rem;
+  opacity: 0.9;
+}
+
+/* Step 5: Effective UI Design and Responsiveness */
+.link-ocean {
+  color: RGBA(5, 68, 94, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(5, 68, 94, var(--bs-link-underline-opacity, 1)) !important;
+  word-break: break-word;
+}
+
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bs-box-shadow) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .page-loader {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .project-card .card-img-top {
+    height: 200px;
+  }
+}
+
+/* Page loader */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: var(--ocean-dark);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* HW8 Step 3: project status badges */
+.status-badge {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.status-ongoing {
+  background-color: var(--ocean-mid);
+}
+
+.status-completed {
+  background-color: #2E7D4F;
+}
+
+.status-due {
+  background-color: var(--coral);
+}
+
+/* HW8 Step 4: download count */
+.download-count {
+  opacity: 0.9;
+}
+
+/* HW8 Bonus: dark mode colors */
+body.dark-mode {
+  --page-bg: #0B1F27;
+  --bs-body-bg: #10303D;
+  --bs-body-color: #E6F1F4;
+  --bs-emphasis-color: #FFFFFF;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: #A9C4CC;
+  --bs-border-color: #24505F;
+  color: #E6F1F4;
+}
+
+body.dark-mode .section-title {
+  color: var(--ocean-light);
+}
+
+body.dark-mode .facts-card {
+  background-color: var(--bs-body-bg);
+}
+
+body.dark-mode .link-ocean {
+  color: var(--ocean-light) !important;
+  text-decoration-color: var(--ocean-light) !important;
+}
+
+body.dark-mode .btn-outline-ocean {
+  --bs-btn-color: var(--ocean-light);
+  --bs-btn-border-color: var(--ocean-light);
+  --bs-btn-hover-bg: var(--ocean-light);
+  --bs-btn-hover-color: var(--ocean-dark);
+}
+
+body.dark-mode .skill-item {
+  background-color: #24505F;
+}
+
+body.dark-mode .skill-name,
+body.dark-mode .skill-delete {
+  color: #E6F1F4;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #0B1F27;
+  color: #E6F1F4;
+}
